@@ -1,10 +1,9 @@
-export type Thing = {
-  type: string;
+export type Thing<Type extends string> = {
+  type: Type;
 };
 
-export type Event = Thing & {
+export type Event = Thing<typeof typeEvent> & {
   name: string;
-  type: typeof typeEvent;
 };
 
 export function isEvent(maybeEvent: unknown): maybeEvent is Event {
