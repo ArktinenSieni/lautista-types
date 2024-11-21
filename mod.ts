@@ -17,3 +17,13 @@ const typeEvent = "event";
 export type Entity<T> = T & {
   id: string;
 };
+
+const typeUser = "user";
+export type User = Thing<typeof typeUser> & {
+  username: string;
+};
+
+export type LoginPayload = {
+  username: string;
+  password: string;
+};
