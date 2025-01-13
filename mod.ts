@@ -4,6 +4,10 @@ export type Thing<Type extends string> = {
 
 export type Event = Thing<typeof typeEvent> & {
   name: string;
+  organizerId: number;
+  maxParticipantCount: number;
+  startTime?: Date;
+  gameId?: number;
 };
 
 export function isEvent(maybeEvent: unknown): maybeEvent is Event {
